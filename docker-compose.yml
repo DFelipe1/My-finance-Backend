@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  api_programa_de_formacao_pg: 
+    image: postgres:alpine
+    ports:
+      - "5492:5432"
+    container_name: "api_programa_de_formacao_pg"
+    restart: always
+    volumes:
+      - ./banco-de-dados:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: pguser
+      POSTGRES_PASSWORD: pgpass
+
+volumes:
+  banco-de-dados: 
